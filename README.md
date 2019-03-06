@@ -6,8 +6,11 @@ vim /usr/local/etc/kibana/kibana.xml
 
 elasticsearch.hosts: ["http://localhost:9200"]
 ```
-3. Configure logstash
+3. Create a directory for logstash conf 
+`mkdir /usr/local/etc/logstash/conf.d`
+
+4. Add logstash configuration to `conf.d`
 ```
 
 ```
-4. Checkout log on [Kibana](http://localhost:5601)
+5. Checkout log on [Kibana](http://localhost:5601)
