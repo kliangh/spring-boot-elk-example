@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <appender name="STASH" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logback/elk-example.log</file>
+        <file>logback/logback.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>logback/elk-example.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>logback/logback.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>7</maxHistory>
         </rollingPolicy>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
