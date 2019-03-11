@@ -15,6 +15,7 @@ public class TestController {
         StringBuilder welcomeMessage = new StringBuilder();
         welcomeMessage.append("Greeting! ");
         welcomeMessage.append(name);
+        welcomeMessage.append(" (HTTP)");
 
         LOG.info(welcomeMessage.toString());
         return welcomeMessage.toString();
