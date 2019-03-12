@@ -11,7 +11,7 @@ elasticsearch.hosts: ["http://localhost:9200"]
 
 4. Add logstash configuration to `conf.d`  
 `vim example.conf`
-* example.conf
+* logfile-example.conf (Read logfile)
 ```
 input {
     file {
@@ -27,6 +27,36 @@ output {
             hosts => [ "localhost:9200" ]
             index => "logback-%{+YYYY.MM.dd}"
         }
+    }
+}
+```
+* http-api-example.conf (Trigger HTTP Request)
+```
+input {
+    http_poller {
+        urls => {
+            welcome => {
+                method => "GET"
+                user => ""
+                password => ""
+                url => "http://localhost:8080/welcome/logstash"
+                headers => {
+                    Accept => "applicatoin/json"
+                }
+            }
+        }
+        request_timeout => 60
+        schedule => {
+            every => "5s"
+        }
+        codec => "json"
+        metadata_target => "http_poller_metadata"
+    }
+}
+
+output {
+    stdout{
+        codec => "rubydebug"
     }
 }
 ```
