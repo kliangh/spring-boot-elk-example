@@ -41,7 +41,7 @@ input {
                 password => ""
                 url => "http://localhost:8080/welcome/logstash"
                 headers => {
-                    Accept => "applicatoin/json"
+                    Accept => "application/json"
                 }
             }
         }
