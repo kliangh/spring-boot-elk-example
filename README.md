@@ -67,3 +67,10 @@ output {
 `logstash -f example.conf`
 
 7. Checkout log on [Kibana](http://localhost:5601)
+
+8. Utilize Spring Boot Actuator to monitor your service
+- http://your.host/actuator/health  
+- http://your.host/actuator/metrics/http.server.requests  
+- http://your.host/actuator/httptrace  
+
+9. Create the dashboard like so
