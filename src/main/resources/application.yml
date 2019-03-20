@@ -1,2 +1,7 @@
 logging:
-  file: elk-demo.log
+  file: logfile.log
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
